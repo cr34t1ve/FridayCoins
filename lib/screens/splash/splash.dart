@@ -6,7 +6,12 @@ class Splash extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF662C92),
-      body: Center(),
+      body: Center(
+        child: Image.asset(
+          'assets/images/image 22.png',
+          width: 229.0,
+        ),
+      ),
     );
   }
 }
