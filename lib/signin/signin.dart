@@ -35,7 +35,7 @@ class _SignInState extends State<SignIn> {
               ],
             ),
             SizedBox(
-              height: 120.0,
+              height: 110.0,
             ),
             TextField(
               decoration: InputDecoration(
@@ -62,6 +62,9 @@ class _SignInState extends State<SignIn> {
                       color: Color(0xFF5EADFF)),
                 )
               ],
+            ),
+            SizedBox(
+              height: 20.0,
             ),
             TextField(
               obscureText: _obscurePass,
@@ -136,6 +139,35 @@ class _SignInState extends State<SignIn> {
             DefaultButton(
                   text: 'Log In',
                   press: (){},
+                ),
+                SizedBox(
+                  height: 30.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    RichText(
+                  text: TextSpan(
+                    style: TextStyle(
+                        fontFamily: 'Roboto',
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xFF718096),
+                      ),
+                    children: <TextSpan>[
+                      TextSpan(text: 'New user? '),
+                      TextSpan(
+                          text: 'Create an account',
+                          style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF5EADFF)),
+                              ),
+                    ],
+                  ),
+                ),
+                  ],
                 )
           ],
         ),
