@@ -7,8 +7,15 @@ import 'package:friday_coins/signin/signin.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: CompleteProfile(),
+    initialRoute: '/',
     debugShowCheckedModeBanner: false,
+    routes: {
+      '/': (context) => Splash(),
+      '/signin': (context) => SignIn(),
+      '/signup': (context) => SignUp(),
+      '/step2': (context) => Step2(),
+      '/completeprofile': (context) => CompleteProfile(),
+    },
   ));
 }
 
