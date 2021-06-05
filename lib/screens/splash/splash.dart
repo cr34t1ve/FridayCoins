@@ -4,6 +4,9 @@ class Splash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.popAndPushNamed(context, '/signin');
+    });
     return Scaffold(
       backgroundColor: Color(0xFF662C92),
       body: Center(

@@ -137,38 +137,43 @@ class _SignInState extends State<SignIn> {
               height: 155.75,
             ),
             DefaultButton(
-                  text: 'Log In',
-                  press: (){},
-                ),
-                SizedBox(
-                  height: 30.0,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    RichText(
-                  text: TextSpan(
-                    style: TextStyle(
+              text: 'Log In',
+              press: () {},
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.popAndPushNamed(context, '/signup');
+                  },
+                  child: RichText(
+                    text: TextSpan(
+                      style: TextStyle(
                         fontFamily: 'Roboto',
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFF718096),
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF718096),
                       ),
-                    children: <TextSpan>[
-                      TextSpan(text: 'New user? '),
-                      TextSpan(
+                      children: <TextSpan>[
+                        TextSpan(text: 'New user? '),
+                        TextSpan(
                           text: 'Create an account',
                           style: TextStyle(
-                      fontFamily: 'Roboto',
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.w400,
-                      color: Color(0xFF5EADFF)),
-                              ),
-                    ],
+                              fontFamily: 'Roboto',
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xFF5EADFF)),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                  ],
-                )
+              ],
+            )
           ],
         ),
       ),

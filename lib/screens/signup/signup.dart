@@ -214,7 +214,9 @@ class _SignUpState extends State<SignUp> {
             ),
             DefaultButton(
               text: 'Next',
-              press: () {},
+              press: () {
+                Navigator.pushNamed(context, '/step2');
+              },
             ),
             SizedBox(
               height: 30.0,
@@ -222,25 +224,30 @@ class _SignUpState extends State<SignUp> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                      fontFamily: 'Roboto',
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFF718096),
-                    ),
-                    children: <TextSpan>[
-                      TextSpan(text: 'Already a user ? '),
-                      TextSpan(
-                        text: 'Log In',
-                        style: TextStyle(
-                            fontFamily: 'Roboto',
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xFF5EADFF)),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.popAndPushNamed(context, '/signin');
+                  },
+                  child: RichText(
+                    text: TextSpan(
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF718096),
                       ),
-                    ],
+                      children: <TextSpan>[
+                        TextSpan(text: 'Already a user ? '),
+                        TextSpan(
+                          text: 'Log In',
+                          style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xFF5EADFF)),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],

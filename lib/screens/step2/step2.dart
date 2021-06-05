@@ -3,7 +3,6 @@ import 'package:friday_coins/components/button.dart';
 import 'package:friday_coins/enum/constants.dart';
 
 class Step2 extends StatefulWidget {
-
   @override
   _Step2State createState() => _Step2State();
 }
@@ -16,7 +15,9 @@ class _Step2State extends State<Step2> {
         backgroundColor: Colors.white,
         elevation: 0.0,
         leading: IconButton(
-          onPressed: (){},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.arrow_back,
             color: Colors.black,
@@ -114,11 +115,11 @@ class _Step2State extends State<Step2> {
                 Text(
                   'Did you receive My TRN App as a benefit through an\nemployer, organization or group ?',
                   style: TextStyle(
-                      fontFamily: 'Roboto',
-                      fontSize: 12.0,
-                      fontWeight: FontWeight.w400,
-                      color: Color(0xFF718096),
-                    ),
+                    fontFamily: 'Roboto',
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xFF718096),
+                  ),
                 )
               ],
             ),
@@ -148,11 +149,11 @@ class _Step2State extends State<Step2> {
                     Text(
                       'Yes',
                       style: TextStyle(
-                      fontFamily: 'Roboto',
-                      fontSize: 12.0,
-                      fontWeight: FontWeight.w400,
-                      color: Color(0xFF718096),
-                    ),
+                        fontFamily: 'Roboto',
+                        fontSize: 12.0,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xFF718096),
+                      ),
                     )
                   ],
                 ),
@@ -180,11 +181,11 @@ class _Step2State extends State<Step2> {
                     Text(
                       'No',
                       style: TextStyle(
-                      fontFamily: 'Roboto',
-                      fontSize: 12.0,
-                      fontWeight: FontWeight.w400,
-                      color: Color(0xFF718096),
-                    ),
+                        fontFamily: 'Roboto',
+                        fontSize: 12.0,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xFF718096),
+                      ),
                     )
                   ],
                 ),
@@ -195,7 +196,9 @@ class _Step2State extends State<Step2> {
             ),
             DefaultButton(
               text: 'Next',
-              press: (){},
+              press: () {
+                Navigator.pushNamed(context, '/completeprofile');
+              },
             ),
             SizedBox(
               height: 30.0,
@@ -203,25 +206,30 @@ class _Step2State extends State<Step2> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                      fontFamily: 'Roboto',
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFF718096),
-                    ),
-                    children: <TextSpan>[
-                      TextSpan(text: 'Already a user ? '),
-                      TextSpan(
-                        text: 'Log In',
-                        style: TextStyle(
-                            fontFamily: 'Roboto',
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xFF5EADFF)),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.popAndPushNamed(context, '/signin');
+                  },
+                  child: RichText(
+                    text: TextSpan(
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF718096),
                       ),
-                    ],
+                      children: <TextSpan>[
+                        TextSpan(text: 'Already a user ? '),
+                        TextSpan(
+                          text: 'Log In',
+                          style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xFF5EADFF)),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],

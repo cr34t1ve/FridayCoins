@@ -17,7 +17,9 @@ class _CompleteProfileState extends State<CompleteProfile> {
         backgroundColor: Colors.white,
         elevation: 0.0,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.arrow_back,
             color: Colors.black,
@@ -87,17 +89,14 @@ class _CompleteProfileState extends State<CompleteProfile> {
               obscureText: _obscurePass,
               decoration: InputDecoration(
                   suffixIcon: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        _obscurePass = !_obscurePass;
-                      });
-                    },
-                    icon: Icon(
-                      _obscurePass
-                    ?Icons.visibility_off_outlined
-                    : Icons.visibility_outlined
-                    )
-                  ),
+                      onPressed: () {
+                        setState(() {
+                          _obscurePass = !_obscurePass;
+                        });
+                      },
+                      icon: Icon(_obscurePass
+                          ? Icons.visibility_off_outlined
+                          : Icons.visibility_outlined)),
                   hintText: 'PASSWORD',
                   hintStyle: TextStyle(
                       fontFamily: 'Roboto',
@@ -113,17 +112,14 @@ class _CompleteProfileState extends State<CompleteProfile> {
               obscureText: _obscureConfirmPass,
               decoration: InputDecoration(
                   suffixIcon: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        _obscureConfirmPass = !_obscureConfirmPass;
-                      });
-                    },
-                    icon: Icon(
-                      _obscureConfirmPass
-                    ?Icons.visibility_off_outlined
-                    : Icons.visibility_outlined
-                    )
-                  ),
+                      onPressed: () {
+                        setState(() {
+                          _obscureConfirmPass = !_obscureConfirmPass;
+                        });
+                      },
+                      icon: Icon(_obscureConfirmPass
+                          ? Icons.visibility_off_outlined
+                          : Icons.visibility_outlined)),
                   hintText: 'CONFIRM PASSWORD',
                   hintStyle: TextStyle(
                       fontFamily: 'Roboto',
@@ -158,9 +154,9 @@ class _CompleteProfileState extends State<CompleteProfile> {
                   text: TextSpan(
                     style: TextStyle(
                       fontFamily: 'Roboto',
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF718096),
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF718096),
                     ),
                     children: <TextSpan>[
                       TextSpan(text: '  •  The '),
@@ -196,9 +192,9 @@ class _CompleteProfileState extends State<CompleteProfile> {
                   text: TextSpan(
                     style: TextStyle(
                       fontFamily: 'Roboto',
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF718096),
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF718096),
                     ),
                     children: <TextSpan>[
                       TextSpan(text: '  •   '),
@@ -237,25 +233,30 @@ class _CompleteProfileState extends State<CompleteProfile> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                RichText(
-                  text: TextSpan(
-                    style: TextStyle(
-                      fontFamily: 'Roboto',
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xFF718096),
-                    ),
-                    children: <TextSpan>[
-                      TextSpan(text: 'Already a user ? '),
-                      TextSpan(
-                        text: 'Log In',
-                        style: TextStyle(
-                            fontFamily: 'Roboto',
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xFF5EADFF)),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.popAndPushNamed(context, '/signin');
+                  },
+                  child: RichText(
+                    text: TextSpan(
+                      style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF718096),
                       ),
-                    ],
+                      children: <TextSpan>[
+                        TextSpan(text: 'Already a user ? '),
+                        TextSpan(
+                          text: 'Log In',
+                          style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xFF5EADFF)),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
