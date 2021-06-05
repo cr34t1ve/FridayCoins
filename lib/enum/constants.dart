@@ -16,3 +16,6 @@ var months = [
 final days = List<String>.generate(31, (i) => '${i + 1}');
 
 final years = List<String>.generate(31, (i) => '${i + 1940}');
+
+bool isYesChecked = false;
+bool isNoChecked = false;
