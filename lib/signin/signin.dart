@@ -76,7 +76,7 @@ class _SignInState extends State<SignIn> {
                       });
                     },
                     icon: Icon(
-                      Icons.remove_red_eye_outlined,
+                      Icons.visibility,
                     ),
                   ),
                   hintText: 'PASSWORD',
