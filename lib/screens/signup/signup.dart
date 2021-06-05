@@ -2,17 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:friday_coins/components/button.dart';
 import 'package:friday_coins/enum/constants.dart';
 
-var _currencies = [
-  "Food",
-  "Transport",
-  "Personal",
-  "Shopping",
-  "Medical",
-  "Rent",
-  "Movie",
-  "Salary"
-];
-
 class SignUp extends StatefulWidget {
   @override
   _SignUpState createState() => _SignUpState();
